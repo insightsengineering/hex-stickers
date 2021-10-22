@@ -46,12 +46,6 @@ your PR.
 
 <td>
 
-<img alt="Logo for nest" src="thumbs/nest.png" width="139" height="139"><br /><a href="PNG/nest.png">nest.png</a><br />
-
-</td>
-
-<td>
-
 <img alt="Logo for pharmaverse" src="thumbs/pharmaverse.png" width="139" height="139"><br /><a href="PNG/pharmaverse.png">pharmaverse.png</a><br />
 
 </td>
@@ -62,15 +56,15 @@ your PR.
 
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="PNG/rtables.png">rtables.png</a><br />
 
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -90,19 +84,25 @@ your PR.
 
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for tern" src="thumbs/tern.png" width="139" height="139"><br /><a href="PNG/tern.png">tern.png</a><br />
 
 </td>
 
+</tr>
+
+<tr>
+
 <td>
 
 <img alt="Logo for thevalidatoR" src="thumbs/thevalidatoR.png" width="139" height="139"><br /><a href="PNG/thevalidatoR.png">thevalidatoR.png</a><br />
+
+</td>
+
+<td>
+
+<img alt="Logo for visR" src="thumbs/visR.png" width="139" height="139"><br /><a href="PNG/visR.png">visR.png</a><br />
 
 </td>
 
