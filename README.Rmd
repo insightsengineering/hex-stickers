@@ -60,7 +60,7 @@ library(purrr)
 # background_color: The colour of the background canvas
 # n_stickers:       The number of hexagons to produce. Recycled in file order.
 hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_small = TRUE, total_stickers = NULL, remove_size = TRUE,
-                    coords = NULL, scale_coords = TRUE, sort_mode = c("filename", "random", "color", "colour"), 
+                    scale_coords = TRUE, sort_mode = c("filename", "random", "color", "colour"), 
                     background_color = "white", n_stickers = NULL){
   sort_mode <- match.arg(sort_mode)
   
@@ -102,12 +102,7 @@ hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_sma
   }
 
   if(is.null(total_stickers)){
-    if(!is.null(coords)){
-      total_stickers <- NROW(coords)      
-    }
-    else{
-      total_stickers <- length(stickers)
-    }
+    total_stickers <- length(stickers)
   }
   
   # Coerce sticker sizes
@@ -140,7 +135,6 @@ hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_sma
     stickers <- stickers[sticker_col]
   }
   
-  if(is.null(coords)){
     # Arrange rows of stickers into images
     sticker_col_size <- ceiling(length(stickers)/(sticker_row_size-0.5))
     row_lens <- rep(c(sticker_row_size,sticker_row_size-1), length.out=sticker_col_size)
@@ -160,39 +154,17 @@ hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_sma
               offset = paste0("+", ((..3-1)%%2)*sticker_width/2, "+", round((..3-1)*sticker_height/1.33526))
             ),
             .init = canvas)
-  }
-  else{
-    sticker_pos <- coords
-    if(scale_coords){
-      sticker_pos <- sticker_pos %>% 
-        as_tibble %>%
-        mutate_all(function(x){
-          x <- x-min(x)
-          dx <- diff(sort(abs(x)))
-          x / min(dx[dx!=0])
-        }) %>%
-        mutate(y = y / min(diff(y)[diff(y)!=0])) %>%
-        mutate(x = x*sticker_width/2,
-               y = abs(y-max(y))*sticker_height/1.33526)
-    }
-    
-    # Add stickers to canvas
-    canvas <- image_blank(max(sticker_pos$x) + sticker_width, 
-                          max(sticker_pos$y) + sticker_height, background_color)
-    reduce2(stickers, sticker_pos%>%split(1:NROW(.)), 
-            ~ image_composite(
-              ..1, ..2,
-              offset = paste0("+", ..3$x, "+", ..3$y)
-            ),
-            .init = canvas)
-  }
 }
 
-hexwall("PNG",
+image <- hexwall("PNG",
         sticker_row_size = 6, sticker_width = 120,
-        sort_mode = "colour"
+        sort_mode = "colour",
         )
+
+image_write(image, path = "hexwall.png", format = "png")
 ```
+
+![](hexwall.png)
 
 # Acknowledgements
 
