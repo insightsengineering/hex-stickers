@@ -197,7 +197,7 @@ cell <- paste0(
   png_link,
   #svg_link, 
   "</td>")
-cols <- 4
+cols <- 3
 rows <- ceiling(length(cell) / cols)
 row_id <- rep(seq_len(rows), each = cols, length.out = length(cell))
 row_cells <- split(cell, row_id)
