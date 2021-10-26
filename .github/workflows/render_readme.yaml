@@ -17,7 +17,7 @@ jobs:
       - uses: r-lib/actions/setup-pandoc@master
       - name: Install packages
         run: |
-          install.packages(c("rmarkdown", "magick","purrr"))
+          install.packages(c("rmarkdown", "magick","purrr","colorspace"))
         shell: Rscript {0}
       - name: Render README
         run: Rscript -e 'rmarkdown::render("README.Rmd")'
