@@ -41,16 +41,9 @@ This project is not tracked by openpharma.github.io
 
 <td>
 
-<img alt="Logo for covtracer" src="thumbs/covtracer.png" width="139" height="139"><br />covtracer
-<br />
-
-<p style="color:grey">
-
-This project is not tracked by openpharma.github.io
-
-</p>
-
-<br /><a href="PNG/covtracer.png">covtracer.png</a>
+<img alt="Logo for covtracer" src="thumbs/covtracer.png" width="139" height="139"><br /><a href="https://github.com/Genentech/covtracer">Genentech/covtracer</a>
+<br />Tools for contextualizing tests, built using covr test
+traces.<br /><a href="PNG/covtracer.png">covtracer.png</a>
 
 </td>
 
@@ -134,16 +127,9 @@ This project is not tracked by openpharma.github.io
 
 <td>
 
-<img alt="Logo for rbmi" src="thumbs/rbmi.png" width="139" height="139"><br />rbmi
-<br />
-
-<p style="color:grey">
-
-This project is not tracked by openpharma.github.io
-
-</p>
-
-<br /><a href="PNG/rbmi.png">rbmi.png</a>
+<img alt="Logo for rbmi" src="thumbs/rbmi.png" width="139" height="139"><br /><a href="https://github.com/insightsengineering/rbmi">insightsengineering/rbmi</a>
+<br />Reference based multiple imputation R
+package<br /><a href="PNG/rbmi.png">rbmi.png</a>
 
 </td>
 
