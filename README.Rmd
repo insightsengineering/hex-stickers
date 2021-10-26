@@ -2,7 +2,7 @@
 output: github_document
 ---
 
-# Roche affaliated hex stickers
+# Hex stickers
 
 Projects where we are involved. To add one, make sure to add your hex under the format `EXACT_PACKAGE_NAME.png` to the PNG 
 folder at a minumum (if you have a svg, please also add it there). The readme is updated on your PR.
@@ -189,7 +189,7 @@ hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_sma
 }
 
 hexwall("PNG",
-        sticker_row_size = 5, sticker_width = 120,
+        sticker_row_size = 6, sticker_width = 120,
         sort_mode = "colour"
         )
 ```
