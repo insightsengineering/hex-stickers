@@ -4,7 +4,8 @@
 Projects where we are involved. To add one, make sure to add your hex
 under the format `EXACT_PACKAGE_NAME.png` to the PNG folder at a minumum
 The readme is updated via a `gh-action` on
-your PR.
+your PR. The name of the `.png` is cross-referenced by the `gh-action` to 
+get details on the :octocat: `org` and description. 
 
 ## Hex sticker wall
 
