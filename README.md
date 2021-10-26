@@ -146,7 +146,7 @@ your PR.
 
 ## Hex sticker wall
 
-![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+![](hexwall.png)
 
 # Acknowledgements
 
