@@ -2,43 +2,48 @@
 output: github_document
 ---
 
+```{r getopenpharma, echo=FALSE,message=FALSE}
+# reference PNGs
+logos <- tools::file_path_sans_ext(dir("PNG", pattern = "\\.png$"))
+
+# get it
+library(magrittr)
+
+  openpharma_repos <- readRDS(url(
+    "https://github.com/openpharma/openpharma_log/blob/main/all-repos/data.rds?raw=true"
+  ))
+  
+  repositories <- tibble::tibble(
+    repo = logos
+    ) %>%
+    dplyr::left_join(
+      openpharma_repos,
+      by = "repo"
+    ) %>%
+    dplyr::mutate(
+      description = dplyr::case_when(
+        is.na(description) ~ "No description in github",
+        TRUE ~ description
+      ),
+      Project = dplyr::case_when(
+        is.na(org) ~ as.character(glue::glue(
+          '{repo} <br />',
+          '<p style="color:grey">This project is not tracked by openpharma.github.io</p>'
+          )),
+        TRUE ~ as.character(glue::glue(
+          '<a href="https://github.com/{org}/{repo}">{org}/{repo}</a> <br />',
+          '{description}'
+          ))
+      )
+    )
+  
+  
+```
+
 # Hex stickers
 
 Projects where we are involved. To add one, make sure to add your hex under the format `EXACT_PACKAGE_NAME.png` to the PNG 
 folder at a minumum (if you have a svg, please also add it there). The readme is updated on your PR.
-
-```{r, echo = FALSE, message = FALSE}
-library(magick)
-logos <- tools::file_path_sans_ext(dir("PNG", pattern = "\\.png$"))
-png <- paste0("PNG/", logos, ".png")
-svg <- paste0("SVG/", logos, ".svg")
-thumb <- paste0("thumbs/", logos, ".png")
-resize <- function(path_in, path_out) {
-  image <- image_read(path_in)
-  image <- image_resize(image, "278x")
-  image_write(image, path_out)
-}
-outdated <- !file.exists(thumb) | file.mtime(thumb) < file.mtime(png)
-invisible(Map(resize, png[outdated], thumb[outdated]))
-```
-
-```{r, results = "asis", echo = FALSE}
-img <- glue::glue('<img alt="Logo for {logos}" src="{thumb}" width="139" height="139">')
-png_link <- glue::glue('<a href="{png}">{logos}.png</a>')
-#svg_link <- glue::glue('<a href="{svg}">{logos}.svg</a>')
-cell <- paste0(
-  "<td>", img, "<br />", 
-  png_link, "<br />", 
-  #svg_link, 
-  "</td>")
-cols <- 4
-rows <- ceiling(length(cell) / cols)
-row_id <- rep(seq_len(rows), each = cols, length.out = length(cell))
-row_cells <- split(cell, row_id)
-cat("<table>\n")
-cat(paste0("<tr>", sapply(row_cells, paste, collapse = ""), "</tr>"), sep = "")
-cat("</table>\n")
-```
 
 ## Hex sticker wall
 
@@ -165,6 +170,41 @@ image_write(image, path = "hexwall.png", format = "png")
 ```
 
 ![](hexwall.png)
+
+Hex details.
+
+```{r, echo = FALSE, message = FALSE}
+library(magick)
+png <- paste0("PNG/", logos, ".png")
+svg <- paste0("SVG/", logos, ".svg")
+thumb <- paste0("thumbs/", logos, ".png")
+resize <- function(path_in, path_out) {
+  image <- image_read(path_in)
+  image <- image_resize(image, "278x")
+  image_write(image, path_out)
+}
+outdated <- !file.exists(thumb) | file.mtime(thumb) < file.mtime(png)
+invisible(Map(resize, png[outdated], thumb[outdated]))
+```
+
+```{r, results = "asis", echo = FALSE}
+img <- glue::glue('<img alt="Logo for {logos}" src="{thumb}" width="139" height="139">')
+png_link <- glue::glue('<a href="{png}">{logos}.png</a>')
+#svg_link <- glue::glue('<a href="{svg}">{logos}.svg</a>')
+cell <- paste0(
+  "<td>", img, "<br />", 
+  repositories$Project, "<br />", 
+  png_link,
+  #svg_link, 
+  "</td>")
+cols <- 4
+rows <- ceiling(length(cell) / cols)
+row_id <- rep(seq_len(rows), each = cols, length.out = length(cell))
+row_cells <- split(cell, row_id)
+cat("<table>\n")
+cat(paste0("<tr>", sapply(row_cells, paste, collapse = ""), "</tr>"), sep = "")
+cat("</table>\n")
+```
 
 # Acknowledgements
 
