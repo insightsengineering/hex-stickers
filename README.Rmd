@@ -193,7 +193,7 @@ png_link <- glue::glue('<a href="{png}">{logos}.png</a>')
 #svg_link <- glue::glue('<a href="{svg}">{logos}.svg</a>')
 cell <- paste0(
   "<td>", img, "<br />", 
-  repositories$Project, "<br />", 
+  repositories$Project, 
   png_link,
   #svg_link, 
   "</td>")
