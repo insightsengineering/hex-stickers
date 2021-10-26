@@ -3,7 +3,7 @@
 
 Projects where we are involved. To add one, make sure to add your hex
 under the format `EXACT_PACKAGE_NAME.png` to the PNG folder at a minumum
-(if you have a svg, please also add it there). The readme is updated on
+The readme is updated via a `gh-action` on
 your PR.
 
 ## Hex sticker wall
