@@ -1,5 +1,5 @@
 
-# Roche affaliated hex stickers
+# Hex stickers
 
 Projects where we are involved. To add one, make sure to add your hex
 under the format `EXACT_PACKAGE_NAME.png` to the PNG folder at a minumum
@@ -40,6 +40,18 @@ your PR.
 
 <td>
 
+<img alt="Logo for DataFakeR" src="thumbs/DataFakeR.png" width="139" height="139"><br /><a href="PNG/DataFakeR.png">DataFakeR.png</a><br />
+
+</td>
+
+<td>
+
+<img alt="Logo for facetsr" src="thumbs/facetsr.png" width="139" height="139"><br /><a href="PNG/facetsr.png">facetsr.png</a><br />
+
+</td>
+
+<td>
+
 <img alt="Logo for hermes" src="thumbs/hermes.png" width="139" height="139"><br /><a href="PNG/hermes.png">hermes.png</a><br />
 
 </td>
@@ -49,6 +61,10 @@ your PR.
 <img alt="Logo for nest" src="thumbs/nest.png" width="139" height="139"><br /><a href="PNG/nest.png">nest.png</a><br />
 
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -62,13 +78,25 @@ your PR.
 
 </td>
 
+<td>
+
+<img alt="Logo for RDO" src="thumbs/RDO.png" width="139" height="139"><br /><a href="PNG/RDO.png">RDO.png</a><br />
+
+</td>
+
+<td>
+
+<img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="PNG/rtables.png">rtables.png</a><br />
+
+</td>
+
 </tr>
 
 <tr>
 
 <td>
 
-<img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="PNG/rtables.png">rtables.png</a><br />
+<img alt="Logo for simaerep" src="thumbs/simaerep.png" width="139" height="139"><br /><a href="PNG/simaerep.png">simaerep.png</a><br />
 
 </td>
 
@@ -116,8 +144,12 @@ your PR.
 
 </table>
 
+## Hex sticker wall
+
+![](README_files/figure-gfm/unnamed-chunk-3-1.png)<!-- -->
+
 # Acknowledgements
 
-Code for this repo has been forked from `rstudio/hex-stickers`.
-Copyright of the images is defined by the sourced project (see source
-repo for hex-sticker)
+Code for this repo has been forked from `rstudio/hex-stickers` and
+`mitchelloharawild/hexwall`. Copyright of the images is defined by the
+sourced project (see source repo for hex-sticker)
