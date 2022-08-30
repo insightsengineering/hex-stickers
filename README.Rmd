@@ -9,41 +9,47 @@ logos <- tools::file_path_sans_ext(dir("PNG", pattern = "\\.png$"))
 # get it
 library(magrittr)
 
-  openpharma_repos <- readRDS(url(
-    "https://github.com/openpharma/openpharma_log/blob/main/all-repos/data.rds?raw=true"
-  ))
-  
-  repositories <- tibble::tibble(
-    repo = logos
-    ) %>%
-    dplyr::left_join(
-      openpharma_repos,
-      by = "repo"
-    ) %>%
-    dplyr::mutate(
-      description = dplyr::case_when(
-        is.na(description) ~ "No description in github",
-        TRUE ~ description
-      ),
-      Project = dplyr::case_when(
-        is.na(org) ~ as.character(glue::glue(
-          '{repo} <br />',
-          '<p style="color:grey">This project is not tracked by openpharma.github.io</p>'
-          )),
-        TRUE ~ as.character(glue::glue(
-          '<a href="https://github.com/{org}/{repo}">{org}/{repo}</a> <br />',
-          '<p> {description} </p>'
-          ))
-      )
+openpharma_repos <- readRDS(url(
+  "https://github.com/openpharma/openpharma_log/blob/main/all-repos/data.rds?raw=true"
+))
+
+repositories <- tibble::tibble(
+  repo = logos
+) %>%
+  dplyr::left_join(
+    openpharma_repos,
+    by = "repo"
+  ) %>%
+  dplyr::mutate(
+    description = dplyr::case_when(
+      is.na(description) ~ "No description in github",
+      TRUE ~ description
+    ),
+    Project = dplyr::case_when(
+      is.na(org) ~ as.character(glue::glue(
+        "{repo} <br />",
+        '<p style="color:grey">This project is not tracked by openpharma.github.io</p>'
+      )),
+      TRUE ~ as.character(glue::glue(
+        '<a href="https://github.com/{org}/{repo}">{org}/{repo}</a> <br />',
+        "<p> {description} </p>"
+      ))
     )
-  
-  
+  )
 ```
 
-# Hex stickers
+# Hex Stickers
 
-Projects where we are involved. To add one, make sure to add your hex under the format `EXACT_PACKAGE_NAME.png` to the PNG 
-folder at a minumum (if you have a svg, please also add it there). The readme is updated on your PR.
+Projects where we are involved. 
+
+## Adding stickers
+
+To add one, make sure to add your hex sticker under the format `EXACT_PACKAGE_NAME.FORMAT`
+
+- where `EXACT_PACKAGE_NAME` is the exact name of your R package,
+- and `FORMAT` is the file format of the hex sticker.
+
+For example, if your package is called `BananaPudding`, and your hex sticker is an SVG, then add `BananaPudding.svg` to the [SVG](SVG) directory.
 
 ## Hex sticker wall
 
@@ -64,107 +70,143 @@ library(purrr)
 # sort_mode:        How should the files be sorted?
 # background_color: The colour of the background canvas
 # n_stickers:       The number of hexagons to produce. Recycled in file order.
-hexwall <- function(path, sticker_row_size = 16, sticker_width = 500, remove_small = TRUE, total_stickers = NULL, remove_size = TRUE,
-                    scale_coords = TRUE, sort_mode = c("filename", "random", "color", "colour"), 
-                    background_color = "white", n_stickers = NULL){
+hexwall <- function(path,
+                    sticker_row_size = 16,
+                    sticker_width = 500,
+                    remove_small = TRUE,
+                    total_stickers = NULL,
+                    remove_size = TRUE,
+                    scale_coords = TRUE,
+                    sort_mode = c("filename", "random", "color", "colour"),
+                    background_color = "white",
+                    n_stickers = NULL) {
   sort_mode <- match.arg(sort_mode)
-  
+
   # Load stickers
   sticker_files <- list.files(path)
-  if(is.null(n_stickers)) n_stickers <- length(sticker_files)
+  if (is.null(n_stickers)) n_stickers <- length(sticker_files)
   sticker_files <- rep_len(sticker_files, n_stickers)
-  stickers <- file.path(path, sticker_files) %>% 
-    map(function(path){
+  stickers <- file.path(path, sticker_files) %>%
+    map(function(path) {
       switch(tools::file_ext(path),
-             svg = image_read_svg(path),
-             pdf = image_read_pdf(path),
-             image_read(path))
+        svg = image_read_svg(path),
+        pdf = image_read_pdf(path),
+        image_read(path)
+      )
     }) %>%
     map(image_transparent, "white") %>%
     map(image_trim) %>%
     set_names(sticker_files)
-  
+
   # Low resolution stickers
   low_res <- stickers %>%
-    map_lgl(~ remove_small && image_info(.x)$width < (sticker_width-1)/2 && image_info(.x)$format != "svg")
+    map_lgl(~ remove_small && image_info(.x)$width < (sticker_width - 1) / 2 && image_info(.x)$format != "svg")
   which(low_res)
-  
+
   stickers <- stickers %>%
     map(image_scale, sticker_width)
-  
+
   # Incorrectly sized stickers
   bad_size <- stickers %>%
-    map_lgl(~ remove_size && with(image_info(.x), height < (median(height)-2) | height > (median(height) + 2)))
+    map_lgl(
+      ~ remove_size && with(
+        image_info(.x),
+        height < (median(height) - 2) | height > (median(height) + 2)
+      )
+    )
   which(bad_size)
-  
+
   # Remove bad stickers
   sticker_rm <- low_res | bad_size
   stickers <- stickers[!sticker_rm]
-  
-  if(any(sticker_rm)){
-    message(sprintf("Automatically removed %i incompatible stickers: %s",
-                    sum(sticker_rm), paste0(names(sticker_rm[sticker_rm]), collapse = ", ")))
+
+  if (any(sticker_rm)) {
+    message(sprintf(
+      "Automatically removed %i incompatible stickers: %s",
+      sum(sticker_rm), paste0(names(sticker_rm[sticker_rm]), collapse = ", ")
+    ))
   }
 
-  if(is.null(total_stickers)){
+  if (is.null(total_stickers)) {
     total_stickers <- length(stickers)
   }
-  
+
   # Coerce sticker sizes
   sticker_height <- stickers %>%
     map(image_info) %>%
     map_dbl("height") %>%
-    median
+    median()
   stickers <- stickers %>%
     map(image_resize, paste0(sticker_width, "x", sticker_height, "!"))
-  
+
   # Repeat stickers sorted by file name
   stickers <- rep_len(stickers, total_stickers)
-  
-  if(sort_mode == "random"){
+
+  if (sort_mode == "random") {
     # Randomly arrange stickers
-    stickers <- sample(c(stickers, sample(stickers, total_stickers - length(stickers), replace = TRUE))) 
-  }
-  else if(sort_mode %in% c("color", "colour")){
+    stickers <- sample(c(
+      stickers,
+      sample(
+        stickers,
+        total_stickers - length(stickers),
+        replace = TRUE
+      )
+    ))
+  } else if (sort_mode %in% c("color", "colour")) {
     # Sort stickers by colour
-    sticker_col <- stickers %>% 
+    sticker_col <- stickers %>%
       map(image_resize, "1x1!") %>%
       map(image_data) %>%
-      map(~paste0("#", paste0(.[,,1], collapse=""))) %>%
+      map(~ paste0("#", paste0(.[, , 1], collapse = ""))) %>%
       map(colorspace::hex2RGB) %>%
       map(as, "HSV") %>%
-      map_dbl(~.@coords[,1]) %>%
+      map_dbl(~ .@coords[, 1]) %>%
       sort(index.return = TRUE) %>%
       .$ix
-    
+
     stickers <- stickers[sticker_col]
   }
-  
-    # Arrange rows of stickers into images
-    sticker_col_size <- ceiling(length(stickers)/(sticker_row_size-0.5))
-    row_lens <- rep(c(sticker_row_size,sticker_row_size-1), length.out=sticker_col_size)
-    row_lens[length(row_lens)] <- row_lens[length(row_lens)]  - (length(stickers) - sum(row_lens))
-    sticker_rows <- map2(row_lens, cumsum(row_lens),
-                         ~ seq(.y-.x+1, by = 1, length.out = .x)) %>%
-      map(~ stickers[.x] %>%
-            invoke(c, .) %>%
-            image_append)
-    
-    # Add stickers to canvas
-    canvas <- image_blank(sticker_row_size*sticker_width, 
-                          sticker_height + (sticker_col_size-1)*sticker_height/1.33526, "white")
-    reduce2(sticker_rows, seq_along(sticker_rows), 
-            ~ image_composite(
-              ..1, ..2,
-              offset = paste0("+", ((..3-1)%%2)*sticker_width/2, "+", round((..3-1)*sticker_height/1.33526))
-            ),
-            .init = canvas)
+
+  # Arrange rows of stickers into images
+  sticker_col_size <- ceiling(length(stickers) / (sticker_row_size - 0.5))
+  row_lens <- rep(c(
+    sticker_row_size,
+    sticker_row_size - 1
+  ), length.out = sticker_col_size)
+  row_lens[
+    length(row_lens)
+  ] <- row_lens[length(row_lens)] - (length(stickers) - sum(row_lens))
+  sticker_rows <- map2(
+    row_lens, cumsum(row_lens),
+    ~ seq(.y - .x + 1, by = 1, length.out = .x)
+  ) %>%
+    map(~ stickers[.x] %>%
+      invoke(c, .) %>%
+      image_append())
+
+  # Add stickers to canvas
+  canvas <- image_blank(
+    sticker_row_size * sticker_width,
+    sticker_height + (sticker_col_size - 1) * sticker_height / 1.33526, "white"
+  )
+  reduce2(sticker_rows, seq_along(sticker_rows),
+    ~ image_composite(
+      ..1, ..2,
+      offset = paste0(
+        "+",
+        (
+          (..3 - 1) %% 2) * sticker_width / 2, "+",
+        round((..3 - 1) * sticker_height / 1.33526)
+      )
+    ),
+    .init = canvas
+  )
 }
 
 image <- hexwall("PNG",
-        sticker_row_size = 6, sticker_width = 120,
-        sort_mode = "colour",
-        )
+  sticker_row_size = 6, sticker_width = 120,
+  sort_mode = "colour",
+)
 
 image_write(image, path = "hexwall.png", format = "png")
 ```
@@ -188,15 +230,16 @@ invisible(Map(resize, png[outdated], thumb[outdated]))
 ```
 
 ```{r, results = "asis", echo = FALSE}
-img <- glue::glue('<img alt="Logo for {logos}" src="{thumb}" width="139" height="139">')
+img <- glue::glue(
+  '<img alt="Logo for {logos}" src="{thumb}" width="139" height="139">'
+)
 png_link <- glue::glue('<a href="{png}">{logos}.png</a>')
-#svg_link <- glue::glue('<a href="{svg}">{logos}.svg</a>')
 cell <- paste0(
-  "<td>", img, "<br />", 
-  repositories$Project, 
+  "<td>", img, "<br />",
+  repositories$Project,
   png_link,
-  #svg_link, 
-  "</td>")
+  "</td>"
+)
 cols <- 3
 rows <- ceiling(length(cell) / cols)
 row_id <- rep(seq_len(rows), each = cols, length.out = length(cell))
@@ -208,4 +251,15 @@ cat("</table>\n")
 
 # Acknowledgements
 
-Code for this repo has been forked from `rstudio/hex-stickers` and `mitchelloharawild/hexwall`. Copyright of the images is defined by the sourced project (see source repo for hex-sticker)
+Code for this repo has been forked from `rstudio/hex-stickers` and `mitchelloharawild/hexwall`.
+Copyright of the images is defined by the sourced project (see source repo for hex-sticker)
+
+## Stargazers
+
+[![Stargazers repo roster for @insightsengineering/hex-stickers](https://reporoster.com/stars/dark/insightsengineering/hex-stickers)](https://github.com/insightsengineering/hex-stickers/stargazers)
+
+[![Stargazers over time](https://starchart.cc/insightsengineering/hex-stickers.svg)](https://starchart.cc/insightsengineering/hex-stickers)
+
+## Forkers
+
+[![Forkers repo roster for @insightsengineering/hex-stickers](https://reporoster.com/forks/dark/insightsengineering/hex-stickers)](https://github.com/insightsengineering/hex-stickers/network/members)
