@@ -77,6 +77,14 @@ This package is using html widgets to wrap facets into R
 </tr>
 <tr>
 <td>
+<img alt="Logo for helios" src="thumbs/helios.png" width="139" height="139"><br />helios
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/helios.png">helios.png</a>
+</td>
+<td>
 <img alt="Logo for hermes" src="thumbs/hermes.png" width="139" height="139"><br />hermes
 <br />
 <p style="color:grey">
@@ -92,6 +100,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/mmrm.png">mmrm.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for nest" src="thumbs/nest.png" width="139" height="139"><br />nest
 <br />
@@ -100,8 +110,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/nest.png">nest.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for pharmaverse" src="thumbs/pharmaverse.png" width="139" height="139"><br />pharmaverse
 <br />
@@ -118,6 +126,8 @@ Reference based multiple imputation R package
 </p>
 <a href="PNG/rbmi.png">rbmi.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for RDO" src="thumbs/RDO.png" width="139" height="139"><br /><a href="https://github.com/openpharma/RDO">openpharma/RDO</a>
 <br />
@@ -126,8 +136,6 @@ Reproducible Data Objects (RDO) in R
 </p>
 <a href="PNG/RDO.png">RDO.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="https://github.com/Roche/rtables">Roche/rtables</a>
 <br />
@@ -145,6 +153,8 @@ detecting under-reporting sites.
 </p>
 <a href="PNG/simaerep.png">simaerep.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for staged.dependencies" src="thumbs/staged.dependencies.png" width="139" height="139"><br /><a href="https://github.com/openpharma/staged.dependencies">openpharma/staged.dependencies</a>
 <br />
@@ -153,8 +163,6 @@ R package to implement development stages for package development
 </p>
 <a href="PNG/staged.dependencies.png">staged.dependencies.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for StatisticalEngineering" src="thumbs/StatisticalEngineering.png" width="139" height="139"><br />StatisticalEngineering
 <br />
@@ -171,6 +179,8 @@ No description in github
 </p>
 <a href="PNG/synthetic.cdisc.data.png">synthetic.cdisc.data.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for teal" src="thumbs/teal.png" width="139" height="139"><br />teal
 <br />
@@ -179,8 +189,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/teal.png">teal.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for tern" src="thumbs/tern.png" width="139" height="139"><br />tern
 <br />
@@ -197,6 +205,8 @@ Github Action that generates R Package Validation documentation 🏁
 </p>
 <a href="PNG/thevalidatoR.png">thevalidatoR.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for visR" src="thumbs/visR.png" width="139" height="139"><br /><a href="https://github.com/openpharma/visR">openpharma/visR</a>
 <br />
