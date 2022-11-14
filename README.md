@@ -8,12 +8,16 @@ Projects where we are involved.
 To add one, make sure to add your hex sticker under the format
 `EXACT_PACKAGE_NAME.FORMAT`
 
--   where `EXACT_PACKAGE_NAME` is the exact name of your R package,
--   and `FORMAT` is the file format of the hex sticker.
+- where `EXACT_PACKAGE_NAME` is the exact name of your R package,
+- and `FORMAT` is the file format of the hex sticker.
 
 For example, if your package is called `BananaPudding`, and your hex
 sticker is an SVG, then add `BananaPudding.svg` to the [SVG](SVG)
 directory.
+
+Then, simply run `rmarkdown::render("README.Rmd")` in R to render the
+`README.md` file, as it will also automatically generate the hexwall and
+the thumbnail(s) for your logo(s).
 
 ## Hex sticker wall
 
