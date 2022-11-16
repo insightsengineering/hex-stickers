@@ -123,6 +123,16 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/pharmaverse.png">pharmaverse.png</a>
 </td>
 <td>
+<img alt="Logo for psborrow2" src="thumbs/psborrow2.png" width="139" height="139"><br />psborrow2
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/psborrow2.png">psborrow2.png</a>
+</td>
+</tr>
+<tr>
+<td>
 <img alt="Logo for rbmi" src="thumbs/rbmi.png" width="139" height="139"><br /><a href="https://github.com/insightsengineering/rbmi">insightsengineering/rbmi</a>
 <br />
 <p>
@@ -130,8 +140,6 @@ Reference based multiple imputation R package
 </p>
 <a href="PNG/rbmi.png">rbmi.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for RDO" src="thumbs/RDO.png" width="139" height="139"><br /><a href="https://github.com/openpharma/RDO">openpharma/RDO</a>
 <br />
@@ -148,6 +156,8 @@ Reporting tables with R
 </p>
 <a href="PNG/rtables.png">rtables.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for simaerep" src="thumbs/simaerep.png" width="139" height="139"><br /><a href="https://github.com/openpharma/simaerep">openpharma/simaerep</a>
 <br />
@@ -157,8 +167,6 @@ detecting under-reporting sites.
 </p>
 <a href="PNG/simaerep.png">simaerep.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for staged.dependencies" src="thumbs/staged.dependencies.png" width="139" height="139"><br /><a href="https://github.com/openpharma/staged.dependencies">openpharma/staged.dependencies</a>
 <br />
@@ -175,6 +183,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/StatisticalEngineering.png">StatisticalEngineering.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for synthetic.cdisc.data" src="thumbs/synthetic.cdisc.data.png" width="139" height="139"><br /><a href="https://github.com/Roche/synthetic.cdisc.data">Roche/synthetic.cdisc.data</a>
 <br />
@@ -183,8 +193,6 @@ No description in github
 </p>
 <a href="PNG/synthetic.cdisc.data.png">synthetic.cdisc.data.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for teal" src="thumbs/teal.png" width="139" height="139"><br />teal
 <br />
@@ -201,6 +209,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/tern.png">tern.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for thevalidatoR" src="thumbs/thevalidatoR.png" width="139" height="139"><br /><a href="https://github.com/insightsengineering/thevalidatoR">insightsengineering/thevalidatoR</a>
 <br />
@@ -209,8 +219,6 @@ Github Action that generates R Package Validation documentation 🏁
 </p>
 <a href="PNG/thevalidatoR.png">thevalidatoR.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for visR" src="thumbs/visR.png" width="139" height="139"><br /><a href="https://github.com/openpharma/visR">openpharma/visR</a>
 <br />
