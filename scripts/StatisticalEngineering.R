@@ -65,10 +65,9 @@ bridge_data <-
   )
 
 feature_color <- "#1881C2"
-bridge_fill <- "#BFDBED"
 
 bridge_plot <- ggplot(bridge_data, aes(x = x, y = y, weight = exp(w))) +
-  stat_smooth(method = "lm", formula = y ~ x, col = feature_color, fill = bridge_fill, se = TRUE, fullrange = TRUE) +
+  stat_smooth(method = "lm", formula = y ~ x, col = feature_color, fill = feature_color, se = TRUE, fullrange = TRUE) +
   geom_point(aes(size = w^5), show.legend = FALSE, color = feature_color, shape = 16, alpha = 0.75) +
   annotate("path", x = c(20, 20), y = c(-1, 1), linetype = 2) +
   annotate("path", x = c(80, 80), y = c(-1, 1), linetype = 2) +
@@ -82,7 +81,7 @@ bridge_plot <- ggplot(bridge_data, aes(x = x, y = y, weight = exp(w))) +
 sticker(
   package = "Statistical\nEngineering",
   p_size = 5.5,
-  p_color = "#1881C2",
+  p_color = feature_color,
   lineheight = .9,
   p_y = 1.45,
   p_family = "RocheSans",
@@ -93,7 +92,7 @@ sticker(
   s_width = 2,
   s_height = 1.2,
   h_fill = "#FFFFFF",
-  h_color = "#1881C2",
+  h_color = feature_color,
   filename = "SVG/StatisticalEngineering.svg",
   dpi = 300
 )
