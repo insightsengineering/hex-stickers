@@ -81,6 +81,14 @@ This package is using html widgets to wrap facets into R
 </tr>
 <tr>
 <td>
+<img alt="Logo for GitStats" src="thumbs/GitStats.png" width="139" height="139"><br />GitStats
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/GitStats.png">GitStats.png</a>
+</td>
+<td>
 <img alt="Logo for helios" src="thumbs/helios.png" width="139" height="139"><br />helios
 <br />
 <p style="color:grey">
@@ -96,6 +104,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/hermes.png">hermes.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for mmrm" src="thumbs/mmrm.png" width="139" height="139"><br />mmrm
 <br />
@@ -104,8 +114,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/mmrm.png">mmrm.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for nest" src="thumbs/nest.png" width="139" height="139"><br />nest
 <br />
@@ -122,6 +130,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/pharmaverse.png">pharmaverse.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for psborrow2" src="thumbs/psborrow2.png" width="139" height="139"><br />psborrow2
 <br />
@@ -130,8 +140,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/psborrow2.png">psborrow2.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for rbmi" src="thumbs/rbmi.png" width="139" height="139"><br /><a href="https://github.com/insightsengineering/rbmi">insightsengineering/rbmi</a>
 <br />
@@ -148,6 +156,8 @@ Reproducible Data Objects (RDO) in R
 </p>
 <a href="PNG/RDO.png">RDO.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="https://github.com/Roche/rtables">Roche/rtables</a>
 <br />
@@ -156,8 +166,6 @@ Reporting tables with R
 </p>
 <a href="PNG/rtables.png">rtables.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for simaerep" src="thumbs/simaerep.png" width="139" height="139"><br /><a href="https://github.com/openpharma/simaerep">openpharma/simaerep</a>
 <br />
@@ -175,6 +183,8 @@ R package to implement development stages for package development
 </p>
 <a href="PNG/staged.dependencies.png">staged.dependencies.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for StatisticalEngineering" src="thumbs/StatisticalEngineering.png" width="139" height="139"><br />StatisticalEngineering
 <br />
@@ -183,8 +193,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/StatisticalEngineering.png">StatisticalEngineering.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for synthetic.cdisc.data" src="thumbs/synthetic.cdisc.data.png" width="139" height="139"><br /><a href="https://github.com/Roche/synthetic.cdisc.data">Roche/synthetic.cdisc.data</a>
 <br />
@@ -201,6 +209,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/teal.png">teal.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for tern" src="thumbs/tern.png" width="139" height="139"><br />tern
 <br />
@@ -209,8 +219,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/tern.png">tern.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for thevalidatoR" src="thumbs/thevalidatoR.png" width="139" height="139"><br /><a href="https://github.com/insightsengineering/thevalidatoR">insightsengineering/thevalidatoR</a>
 <br />
