@@ -28,7 +28,7 @@ Hex details.
 <table>
 <tr>
 <td>
-<img alt="Logo for admiral" src="thumbs/admiral.png" width="139" height="139"><br /><a href="https://github.com/Roche-GSK/admiral">Roche-GSK/admiral</a>
+<img alt="Logo for admiral" src="thumbs/admiral.png" width="139" height="139"><br /><a href="https://github.com/pharmaverse/admiral">pharmaverse/admiral</a>
 <br />
 <p>
 ADaM in R Asset Library
@@ -159,7 +159,7 @@ Reproducible Data Objects (RDO) in R
 </tr>
 <tr>
 <td>
-<img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="https://github.com/Roche/rtables">Roche/rtables</a>
+<img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="https://github.com/insightsengineering/rtables">insightsengineering/rtables</a>
 <br />
 <p>
 Reporting tables with R
