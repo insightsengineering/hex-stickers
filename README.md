@@ -8,8 +8,8 @@ Projects where we are involved.
 To add one, make sure to add your hex sticker under the format
 `EXACT_PACKAGE_NAME.FORMAT`
 
--   where `EXACT_PACKAGE_NAME` is the exact name of your R package,
--   and `FORMAT` is the file format of the hex sticker.
+- where `EXACT_PACKAGE_NAME` is the exact name of your R package,
+- and `FORMAT` is the file format of the hex sticker.
 
 For example, if your package is called `BananaPudding`, and your hex
 sticker is an SVG, then add `BananaPudding.svg` to the [SVG](SVG)
@@ -159,17 +159,15 @@ Reproducible Data Objects (RDO) in R
 </tr>
 <tr>
 <td>
-<img alt="Logo for rlistings" src="thumbs/rlistings.png" width="139" height="139"><br />rlistings
+<img alt="Logo for rlistings" src="thumbs/rlistings.png" height="139"><br />rlistings
 <br />
 <p style="color:grey">
 This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/rlistings.png">rlistings.png</a>
 </td>
-</tr>
-<tr>
 <td>
-<img alt="Logo for rtables" src="thumbs/rtables.png" width="139" height="139"><br /><a href="https://github.com/Roche/rtables">Roche/rtables</a>
+<img alt="Logo for rtables" src="thumbs/rtables.png" height="139"><br /><a href="https://github.com/Roche/rtables">Roche/rtables</a>
 <br />
 <p>
 Reporting tables with R
@@ -184,6 +182,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/sasr.png">sasr.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for simaerep" src="thumbs/simaerep.png" height="139"><br /><a href="https://github.com/openpharma/simaerep">openpharma/simaerep</a>
 <br />
@@ -193,8 +193,6 @@ detecting under-reporting sites.
 </p>
 <a href="PNG/simaerep.png">simaerep.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for staged.dependencies" src="thumbs/staged.dependencies.png" height="139"><br /><a href="https://github.com/openpharma/staged.dependencies">openpharma/staged.dependencies</a>
 <br />
@@ -203,8 +201,6 @@ R package to implement development stages for package development
 </p>
 <a href="PNG/staged.dependencies.png">staged.dependencies.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for StatisticalEngineering" src="thumbs/StatisticalEngineering.png" height="139"><br />StatisticalEngineering
 <br />
@@ -213,6 +209,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/StatisticalEngineering.png">StatisticalEngineering.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for synthetic.cdisc.data" src="thumbs/synthetic.cdisc.data.png" height="139"><br /><a href="https://github.com/Roche/synthetic.cdisc.data">Roche/synthetic.cdisc.data</a>
 <br />
@@ -221,8 +219,6 @@ No description in github
 </p>
 <a href="PNG/synthetic.cdisc.data.png">synthetic.cdisc.data.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for teal" src="thumbs/teal.png" height="139"><br />teal
 <br />
@@ -231,8 +227,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/teal.png">teal.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for tern" src="thumbs/tern.png" height="139"><br />tern
 <br />
@@ -241,17 +235,16 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/tern.png">tern.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for thevalidatoR" src="thumbs/thevalidatoR.png" height="139"><br /><a href="https://github.com/insightsengineering/thevalidatoR">insightsengineering/thevalidatoR</a>
 <br />
 <p>
-Github Action that generates R Package Validation documentation
-&lt;U+0001F3C1&gt;
+Github Action that generates R Package Validation documentation 🏁
 </p>
 <a href="PNG/thevalidatoR.png">thevalidatoR.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for visR" src="thumbs/visR.png" height="139"><br /><a href="https://github.com/openpharma/visR">openpharma/visR</a>
 <br />
@@ -263,6 +256,11 @@ to graphical principles.
 </td>
 </tr>
 </table>
+
+## HTML
+
+Generated HTML wall of hexes at
+<https://insightsengineering.github.io/hex-stickers>
 
 # Acknowledgements
 
