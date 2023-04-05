@@ -251,6 +251,76 @@ cat(paste0("<tr>", sapply(row_cells, paste, collapse = ""), "</tr>"), sep = "")
 cat("</table>\n")
 ```
 
+## HTML
+
+Generated HTML wall of hexes at https://insightsengineering.github.io/hex-stickers
+
+```{r, include = FALSE}
+input_data <- tibble::tibble(
+  package = logos,
+  png_link = png
+  ) %>%
+  dplyr::left_join(
+    repositories,
+    by = c("package" = "repo")
+  ) %>%
+  dplyr::select(package, png_link, full_name) %>%
+  dplyr::mutate(
+    repo_link = glue::glue(
+      '<a href="https://github.com/{full_name}">{full_name}</a>'
+    ),
+    png_link = glue::glue("https://raw.githubusercontent.com/insightsengineering/hex-stickers/main/{png_link}")
+  )
+
+hexes <- NULL
+for (i in 1:nrow(input_data)){
+
+  i_row <- input_data[i,]
+
+  hexes <- paste0(
+    hexes,
+    "
+
+    ",
+    glue::glue(
+     '<li class="hex">
+        <div class="hexIn">
+          <a class="hexLink" href="https://github.com/{i_row$full_name}">
+            <img src="{i_row$png_link}" alt="" >
+          </a>
+        </div>
+      </li>
+
+     '
+    )
+  )
+}
+
+paste0(
+  '
+  <!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" type="text/css" href="hex.css">
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+    <ul id="hexGrid">
+  ',
+  hexes,
+  "
+      </ul>
+  </body>
+</html>
+  "
+) %>% write(
+  file = "docs/hexwall.html"
+)
+```
+
 # Acknowledgements
 
 Code for this repo has been forked from `rstudio/hex-stickers` and `mitchelloharawild/hexwall`.
