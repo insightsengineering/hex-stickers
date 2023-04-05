@@ -30,7 +30,7 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: "[skip actions] Render README.md"
-          file_pattern: README.md thumbs/*.png hexwall.png
+          file_pattern: README.md thumbs/*.png hexwall.png docs/*
           commit_user_name: insights-engineering-bot
           commit_user_email: >-
             68416928+insights-engineering-bot@users.noreply.github.com
