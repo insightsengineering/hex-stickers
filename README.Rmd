@@ -317,7 +317,7 @@ paste0(
 </html>
   "
 ) %>% write(
-  file = "docs/hexwall.html"
+  file = "docs/index.html"
 )
 ```
 
