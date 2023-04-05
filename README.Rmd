@@ -253,9 +253,9 @@ cat("</table>\n")
 
 ## HTML
 
-Generate HTML page at https://insightsengineering.github.io/hex-stickers
+Generated HTML wall of hexes at https://insightsengineering.github.io/hex-stickers
 
-```{r}
+```{r, include = FALSE}
 input_data <- tibble::tibble(
   package = logos,
   png_link = png
