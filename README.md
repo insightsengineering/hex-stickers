@@ -21,6 +21,12 @@ the thumbnail(s) for your logo(s).
 
 ## Hex sticker wall
 
+    ## Warning: `invoke()` was deprecated in purrr 1.0.0.
+    ## ℹ Please use `exec()` instead.
+    ## This warning is displayed once every 8 hours.
+    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+    ## generated.
+
 ![](hexwall.png)
 
 Hex details.
@@ -36,6 +42,14 @@ ADaM in R Asset Library
 <a href="PNG/admiral.png">admiral.png</a>
 </td>
 <td>
+<img alt="Logo for Biomarker Catalog" src="thumbs/Biomarker Catalog.png" height="139"><br />Biomarker
+Catalog <br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/Biomarker Catalog.png">Biomarker Catalog.png</a>
+</td>
+<td>
 <img alt="Logo for chevron" src="thumbs/chevron.png" height="139"><br />chevron
 <br />
 <p style="color:grey">
@@ -43,6 +57,8 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/chevron.png">chevron.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for covtracer" src="thumbs/covtracer.png" height="139"><br /><a href="https://github.com/Genentech/covtracer">Genentech/covtracer</a>
 <br />
@@ -51,8 +67,6 @@ Tools for contextualizing tests, built using covr test traces.
 </p>
 <a href="PNG/covtracer.png">covtracer.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for crmPack" src="thumbs/crmPack.png" height="139"><br /><a href="https://github.com/Roche/crmPack">Roche/crmPack</a>
 <br />
@@ -70,6 +84,8 @@ data preserving specified assumptions about the original one.
 </p>
 <a href="PNG/DataFakeR.png">DataFakeR.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for facetsr" src="thumbs/facetsr.png" height="139"><br /><a href="https://github.com/openpharma/facetsr">openpharma/facetsr</a>
 <br />
@@ -77,6 +93,22 @@ data preserving specified assumptions about the original one.
 This package is using html widgets to wrap facets into R
 </p>
 <a href="PNG/facetsr.png">facetsr.png</a>
+</td>
+<td>
+<img alt="Logo for formatters" src="thumbs/formatters.png" height="139"><br />formatters
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/formatters.png">formatters.png</a>
+</td>
+<td>
+<img alt="Logo for ggplot2.utils" src="thumbs/ggplot2.utils.png" height="139"><br />ggplot2.utils
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/ggplot2.utils.png">ggplot2.utils.png</a>
 </td>
 </tr>
 <tr>
@@ -107,6 +139,14 @@ This project is not tracked by openpharma.github.io
 </tr>
 <tr>
 <td>
+<img alt="Logo for jmpost" src="thumbs/jmpost.png" height="139"><br />jmpost
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/jmpost.png">jmpost.png</a>
+</td>
+<td>
 <img alt="Logo for mmrm" src="thumbs/mmrm.png" height="139"><br />mmrm
 <br />
 <p style="color:grey">
@@ -121,6 +161,24 @@ This project is not tracked by openpharma.github.io
 This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/nest.png">nest.png</a>
+</td>
+</tr>
+<tr>
+<td>
+<img alt="Logo for ocean" src="thumbs/ocean.png" height="139"><br />ocean
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/ocean.png">ocean.png</a>
+</td>
+<td>
+<img alt="Logo for PharmaDevOps" src="thumbs/PharmaDevOps.png" height="139"><br />PharmaDevOps
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/PharmaDevOps.png">PharmaDevOps.png</a>
 </td>
 <td>
 <img alt="Logo for pharmaverse" src="thumbs/pharmaverse.png" height="139"><br />pharmaverse
@@ -141,6 +199,14 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/psborrow2.png">psborrow2.png</a>
 </td>
 <td>
+<img alt="Logo for Rbasel" src="thumbs/Rbasel.png" height="139"><br />Rbasel
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/Rbasel.png">Rbasel.png</a>
+</td>
+<td>
 <img alt="Logo for rbmi" src="thumbs/rbmi.png" height="139"><br /><a href="https://github.com/insightsengineering/rbmi">insightsengineering/rbmi</a>
 <br />
 <p>
@@ -148,6 +214,8 @@ Reference based multiple imputation R package
 </p>
 <a href="PNG/rbmi.png">rbmi.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for RDO" src="thumbs/RDO.png" height="139"><br /><a href="https://github.com/openpharma/RDO">openpharma/RDO</a>
 <br />
@@ -156,8 +224,6 @@ Reproducible Data Objects (RDO) in R
 </p>
 <a href="PNG/RDO.png">RDO.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for rlistings" src="thumbs/rlistings.png" height="139"><br />rlistings
 <br />
@@ -174,6 +240,8 @@ Reporting tables with R
 </p>
 <a href="PNG/rtables.png">rtables.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for sasr" src="thumbs/sasr.png" height="139"><br />sasr
 <br />
@@ -182,8 +250,14 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/sasr.png">sasr.png</a>
 </td>
-</tr>
-<tr>
+<td>
+<img alt="Logo for scda" src="thumbs/scda.png" height="139"><br />scda
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/scda.png">scda.png</a>
+</td>
 <td>
 <img alt="Logo for simaerep" src="thumbs/simaerep.png" height="139"><br /><a href="https://github.com/openpharma/simaerep">openpharma/simaerep</a>
 <br />
@@ -193,6 +267,8 @@ detecting under-reporting sites.
 </p>
 <a href="PNG/simaerep.png">simaerep.png</a>
 </td>
+</tr>
+<tr>
 <td>
 <img alt="Logo for staged.dependencies" src="thumbs/staged.dependencies.png" height="139"><br /><a href="https://github.com/openpharma/staged.dependencies">openpharma/staged.dependencies</a>
 <br />
@@ -209,16 +285,16 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/StatisticalEngineering.png">StatisticalEngineering.png</a>
 </td>
+<td>
+<img alt="Logo for teal.gallery" src="thumbs/teal.gallery.png" height="139"><br />teal.gallery
+<br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/teal.gallery.png">teal.gallery.png</a>
+</td>
 </tr>
 <tr>
-<td>
-<img alt="Logo for synthetic.cdisc.data" src="thumbs/synthetic.cdisc.data.png" height="139"><br /><a href="https://github.com/Roche/synthetic.cdisc.data">Roche/synthetic.cdisc.data</a>
-<br />
-<p>
-No description in github
-</p>
-<a href="PNG/synthetic.cdisc.data.png">synthetic.cdisc.data.png</a>
-</td>
 <td>
 <img alt="Logo for teal" src="thumbs/teal.png" height="139"><br />teal
 <br />
@@ -235,8 +311,6 @@ This project is not tracked by openpharma.github.io
 </p>
 <a href="PNG/tern.png">tern.png</a>
 </td>
-</tr>
-<tr>
 <td>
 <img alt="Logo for thevalidatoR" src="thumbs/thevalidatoR.png" height="139"><br /><a href="https://github.com/insightsengineering/thevalidatoR">insightsengineering/thevalidatoR</a>
 <br />
@@ -244,6 +318,16 @@ This project is not tracked by openpharma.github.io
 Github Action that generates R Package Validation documentation 🏁
 </p>
 <a href="PNG/thevalidatoR.png">thevalidatoR.png</a>
+</td>
+</tr>
+<tr>
+<td>
+<img alt="Logo for TLG Catalog" src="thumbs/TLG Catalog.png" height="139"><br />TLG
+Catalog <br />
+<p style="color:grey">
+This project is not tracked by openpharma.github.io
+</p>
+<a href="PNG/TLG Catalog.png">TLG Catalog.png</a>
 </td>
 <td>
 <img alt="Logo for visR" src="thumbs/visR.png" height="139"><br /><a href="https://github.com/openpharma/visR">openpharma/visR</a>
