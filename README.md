@@ -21,12 +21,6 @@ the thumbnail(s) for your logo(s).
 
 ## Hex sticker wall
 
-    ## Warning: `invoke()` was deprecated in purrr 1.0.0.
-    ## ℹ Please use `exec()` instead.
-    ## This warning is displayed once every 8 hours.
-    ## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
-    ## generated.
-
 ![](hexwall.png)
 
 Hex details.
