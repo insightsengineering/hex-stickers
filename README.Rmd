@@ -40,7 +40,7 @@ repositories <- tibble::tibble(
 
 # Hex Stickers
 
-Projects where we are involved. 
+Projects where we are involved.
 
 ## Adding stickers
 
@@ -183,7 +183,7 @@ hexwall <- function(path,
     ~ seq(.y - .x + 1, by = 1, length.out = .x)
   ) %>%
     map(~ stickers[.x] %>%
-      invoke(c, .) %>%
+      exec(c, !!!.) %>%
       image_append())
 
   # Add stickers to canvas
