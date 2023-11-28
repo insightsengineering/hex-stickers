@@ -90,11 +90,15 @@ hexwall <- function(path,
   sticker_files <- rep_len(sticker_files, n_stickers)
   stickers <- file.path(path, sticker_files) %>%
     map(function(path) {
-      switch(tools::file_ext(path),
+      intermediate <- switch(tools::file_ext(path),
         svg = image_read_svg(path),
         pdf = image_read_pdf(path),
         image_read(path)
       )
+      # Scale down to avoid cache exhausted errors
+      result <- image_resize(intermediate, "400x400")
+      image_destroy(intermediate)
+      result
     }) %>%
     map(image_transparent, "white") %>%
     map(image_trim) %>%
