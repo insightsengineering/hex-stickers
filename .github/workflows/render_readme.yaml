@@ -16,6 +16,7 @@ jobs:
     runs-on: ubuntu-latest
     container:
       image: ghcr.io/insightsengineering/rstudio_4.2.1_bioc_3.15:latest
+
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
@@ -31,6 +32,32 @@ jobs:
         with:
           commit_message: "[skip actions] Render README.md"
           file_pattern: README.md thumbs/*.png hexwall.png docs/*
+          commit_user_name: insights-engineering-bot
+          commit_user_email: >-
+            68416928+insights-engineering-bot@users.noreply.github.com
+  icons:
+    name: Generate Icons
+    runs-on: ubuntu-latest
+    if: ${{ always() }}
+    needs: render
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v3
+
+      - name: Ensure icon directory exists
+        run: |
+          mkdir -p ICO
+
+      - name: Run script to update icons
+        run: |
+          cd scripts
+          bash png-to-ico.bash
+      - name: Commit and push changes
+
+        uses: stefanzweifel/git-auto-commit-action@v4
+        with:
+          commit_message: "[skip actions] Update ICO folder"
+          file_pattern: ICO/*.ico
           commit_user_name: insights-engineering-bot
           commit_user_email: >-
             68416928+insights-engineering-bot@users.noreply.github.com
