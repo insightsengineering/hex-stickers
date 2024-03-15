@@ -1,7 +1,7 @@
 
 # Hex Stickers
 
-Projects where we are involved.
+Repository for R hex stickers.
 
 ## Adding stickers
 
