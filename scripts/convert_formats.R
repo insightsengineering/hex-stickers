@@ -81,5 +81,3 @@ create_logos <- function(row) {
 for (file in seq_len(nrow(file2convert))) {
   create_logos(file2convert[file, ])
 }
-
-
