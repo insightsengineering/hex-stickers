@@ -1,83 +1,94 @@
-# Script to automatically convert files between formats
+# Professional Script for Automatic Logo Conversion
 
-files_info <- function(path) {
-  lf <- list.files(path = path, full.names = TRUE,
-                   all.files = FALSE, recursive = FALSE)
-  file.info(lf)
+library("magick")
+
+# Function to retrieve file information from a directory
+get_file_info <- function(path) {
+  files <- list.files(path = path, full.names = TRUE, recursive = FALSE)
+  tools::file_path_sans_ext(basename(files))
 }
 
-svg <- files_info("SVG")
-png <- files_info("PNG")
-ico <- files_info("ICO")
-jpg <- files_info("jpg")
-svg_f <- tools::file_path_sans_ext(basename(rownames(svg)))
-png_f <- tools::file_path_sans_ext(basename(rownames(png)))
-ico_f <- tools::file_path_sans_ext(basename(rownames(ico)))
-jpg_f <- tools::file_path_sans_ext(basename(rownames(jpg)))
-all_icons <- unique(c(svg_f, png_f, ico_f, jpg_f))
+# Get file names (sans extensions) from each format directory
+svg_files <- get_file_info("SVG")
+png_files <- get_file_info("PNG")
+ico_files <- get_file_info("ICO")
+jpg_files <- get_file_info("jpg")
 
-df <- data.frame(
+# Consolidate all unique file names
+all_icons <- unique(c(svg_files, png_files, ico_files, jpg_files))
+
+# Create a dataframe indicating the presence of each format
+icons_df <- data.frame(
   icons = all_icons,
-  svg = all_icons %in% svg_f,
-  ico = all_icons %in% ico_f,
-  jpg = all_icons %in% jpg_f,
-  png = all_icons %in% png_f)
+  svg = all_icons %in% svg_files,
+  png = all_icons %in% png_files,
+  ico = all_icons %in% ico_files,
+  jpg = all_icons %in% jpg_files
+)
 
-# Incomplete cases of icons:
-sum(!df$svg | !df$ico | !df$png | df$jpg)
-# Complete cases of icons
-sum(df$svg & df$ico & df$png & df$jpg)
+# Filter files that need conversion (not present in all formats)
+files_to_convert <- icons_df[rowSums(icons_df[, -1]) != ncol(icons_df) - 1, ]
 
-df
+# Function to convert and save logos in missing formats
+convert_logos <- function(row) {
+  file_name <- row["icons"]
+  available_formats <- names(row[-1])[unlist(row[-1])]
+  missing_formats <- setdiff(c("svg", "png", "jpg", "ico"), available_formats)
 
+  # Determine the best base format to use for conversion
+  format_preference <- c("svg", "jpg", "png", "ico")
+  base_format <- format_preference[min(match(available_formats, format_preference, nomatch = Inf))]
 
-# create images in all formats
-library("magick")
-# Preference of format: svg, png, jpg, ico
-configs <- magick::magick_config()
-formats <- c("svg", "png", "jpeg", "ico")
-relevant_configs <- configs[formats]
-names(relevant_configs) <- formats
-relevant_configs
-
-# filter files already present in all formats
-file2convert <- df[rowSums(df[, -1]) != ncol(df) -1, ]
-
-create_logos <- function(row) {
-  file_name <- row[, "icons"]
-  formats <- unlist(row[, -1, drop = TRUE], recursive = FALSE)
-  formats_available <- names(formats)[formats]
-  missing_formats <- setdiff(names(formats), formats_available)
-
-  order_preference_formats <- c("svg", "jpg", "png", "ico")
-  preference <- pmatch(formats_available, order_preference_formats)
-  base_format <- order_preference_formats[min(preference, na.rm = TRUE)]
-
-  input_file <- file.path(toupper(base_format),
-                          paste0(file_name, ".", base_format))
-  if (base_format == "svg") {
-    image <- image_read_svg(path = input_file)
+  input_file <- file.path(toupper(base_format), paste0(file_name, ".", base_format))
+  browser(expr = is.na(base_format == "svg") || length(base_format) == 0L)
+  image <- if (base_format == "svg") {
+    image_read_svg(input_file)
   } else {
-    image <- image_read(input_file)
-
+    image_read(input_file)
   }
 
+  message("Converting ", file_name, " from ", base_format, " to ", paste(missing_formats, collapse = ", "))
 
-  message("processing ", file_name, "\n\tConverting from ", base_format,
-          " to ", paste(missing_formats, collapse = ", "))
-  browser(expr = file_name == "NEST")
   for (format in missing_formats) {
-    if (format == "ico") next
-    new_file <- file.path(toupper(format), paste0(file_name, ".", format))
-    # if (file.exists(new_file)) next
-    ic <- image_convert(image, format = format, matte = TRUE)
-    image_write(ic, path = new_file, format = format, depth = 8)
+    if (format == "ico") next # Skip ICO conversion (optional handling)
+    output_file <- file.path(toupper(format), paste0(file_name, ".", format))
+    converted_image <- image_convert(image, format = format, matte = TRUE)
+    image_write(converted_image, path = output_file, format = format, depth = 8)
   }
+
   image_destroy(image)
 }
 
-
-# Be aware that one needs to check the output with the original file.
-for (file in seq_len(nrow(file2convert))) {
-  create_logos(file2convert[file, ])
+# Perform conversion for each incomplete file
+for (r in seq_len(nrow(files_to_convert))) {
+  convert_logos(files_to_convert[r, ])
 }
+
+# Move SVG logos to corresponding package directories
+move_logos_to_packages <- function(path_pacakges = "..") {
+  svg_logos <- list.files("SVG", full.names = TRUE, recursive = FALSE)
+  package_dirs <- list.dirs(path_pacakges, recursive = FALSE)
+  package_dirs <- package_dirs[!endsWith(package_dirs, ".Rcheck")]
+
+  logo_names <- tools::file_path_sans_ext(basename(svg_logos))
+  matching_packages <- intersect(tolower(logo_names), basename(package_dirs))
+
+  destination_paths <- file.path(path_pacakges, matching_packages, "man", "figures", "logo.svg")
+  origin_paths <- svg_logos[tools::file_path_sans_ext(basename(svg_logos)) %in% matching_packages]
+
+  valid_destinations <- dir.exists(dirname(destination_paths)) & !file.exists(destination_paths)
+
+  if (any(valid_destinations)) {
+    message("Copying to": paste(destination_paths[valid_destinations], collapse = ", "))
+    file.copy(from = origin_paths[valid_destinations], to = destination_paths[valid_destinations])
+  }
+
+  # Remove existing PNG logos if applicable
+  png_logos <- file.path(path_pacakges, matching_packages, "man", "figures", "logo.png")
+  if (any(file.exists(png_logos))) {
+    message("Removing ", paste(png_logos[file.exists(png_logos)], collapse = ", "))
+    file.remove(png_logos[file.exists(png_logos)])
+  }
+}
+
+move_logos_to_packages()
