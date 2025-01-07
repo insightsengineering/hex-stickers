@@ -20,14 +20,14 @@ all_icons <- unique(c(svg_files, png_files, ico_files, jpg_files))
 # Create a dataframe indicating the presence of each format
 icons_df <- data.frame(
   icons = all_icons,
-  svg = all_icons %in% svg_files,
-  png = all_icons %in% png_files,
-  ico = all_icons %in% ico_files,
-  jpg = all_icons %in% jpg_files
+  svg = tolower(all_icons) %in% tolower(svg_files),
+  png = tolower(all_icons) %in% tolower(png_files),
+  ico = tolower(all_icons) %in% tolower(ico_files),
+  jpg = tolower(all_icons) %in% tolower(jpg_files)
 )
 
-# Filter files that need conversion (not present in all formats)
-files_to_convert <- icons_df[rowSums(icons_df[, -1]) != ncol(icons_df) - 1, ]
+# Filter files that need conversion (not present in all formats less ICO)
+files_to_convert <- icons_df[rowSums(icons_df[, -1]) < ncol(icons_df) - 2, ]
 
 # Function to convert and save logos in missing formats
 convert_logos <- function(row) {
@@ -37,18 +37,21 @@ convert_logos <- function(row) {
 
   # Determine the best base format to use for conversion
   format_preference <- c("svg", "jpg", "png", "ico")
-  base_format <- format_preference[min(match(available_formats, format_preference, nomatch = Inf))]
+  min_match <- min(match(available_formats, format_preference), na.rm = TRUE)
+  base_format <- format_preference[min_match]
 
   input_file <- file.path(toupper(base_format), paste0(file_name, ".", base_format))
-  browser(expr = is.na(base_format == "svg") || length(base_format) == 0L)
   image <- if (base_format == "svg") {
     image_read_svg(input_file)
   } else {
     image_read(input_file)
   }
 
+  missing_formats <- setdiff(missing_formats, "ico")
+  if (length(missing_formats) == 0L) {
+    invisible(return(NULL))
+  }
   message("Converting ", file_name, " from ", base_format, " to ", paste(missing_formats, collapse = ", "))
-
   for (format in missing_formats) {
     if (format == "ico") next # Skip ICO conversion (optional handling)
     output_file <- file.path(toupper(format), paste0(file_name, ".", format))
@@ -79,7 +82,7 @@ move_logos_to_packages <- function(path_pacakges = "..") {
   valid_destinations <- dir.exists(dirname(destination_paths)) & !file.exists(destination_paths)
 
   if (any(valid_destinations)) {
-    message("Copying to": paste(destination_paths[valid_destinations], collapse = ", "))
+    message("Copying to", paste(destination_paths[valid_destinations], collapse = ", "))
     file.copy(from = origin_paths[valid_destinations], to = destination_paths[valid_destinations])
   }
 
