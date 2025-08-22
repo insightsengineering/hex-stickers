@@ -55,22 +55,6 @@ This project is not tracked by openpharma.github.io
 
 <td>
 
-<img alt="Logo for Biomarker" src="thumbs/Biomarker.png" height="139"><br />Biomarker
-<br />
-<p style="color:grey">
-
-This project is not tracked by openpharma.github.io
-</p>
-
-<a href="PNG/Biomarker.png">Biomarker.png</a>
-</td>
-
-</tr>
-
-<tr>
-
-<td>
-
 <img alt="Logo for bonsaiforest" src="thumbs/bonsaiforest.png" height="139"><br />bonsaiforest
 <br />
 <p style="color:grey">
@@ -80,6 +64,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/bonsaiforest.png">bonsaiforest.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -105,10 +93,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/cardx.png">cardx.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for chevron" src="thumbs/chevron.png" height="139"><br />chevron
@@ -120,6 +104,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/chevron.png">chevron.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -145,10 +133,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/crane.png">crane.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for crmPack" src="thumbs/crmPack.png" height="139"><br /><a href="https://github.com/Roche/crmPack">Roche/crmPack</a>
@@ -160,6 +144,10 @@ Object-Oriented Implementation of CRM Designs
 
 <a href="PNG/crmPack.png">crmPack.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -186,10 +174,6 @@ This package is using html widgets to wrap facets into R
 <a href="PNG/facetsr.png">facetsr.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for formatters" src="thumbs/formatters.png" height="139"><br />formatters
@@ -201,6 +185,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/formatters.png">formatters.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -226,10 +214,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/GitStats.png">GitStats.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for helios" src="thumbs/helios.png" height="139"><br />helios
@@ -241,6 +225,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/helios.png">helios.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -266,10 +254,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/jmpost.png">jmpost.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for mmrm" src="thumbs/mmrm.png" height="139"><br />mmrm
@@ -281,6 +265,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/mmrm.png">mmrm.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -306,10 +294,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/ocean.png">ocean.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for PharmaDevOps" src="thumbs/PharmaDevOps.png" height="139"><br />PharmaDevOps
@@ -321,6 +305,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/PharmaDevOps.png">PharmaDevOps.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -346,10 +334,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/psborrow2.png">psborrow2.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for Rbasel" src="thumbs/Rbasel.png" height="139"><br />Rbasel
@@ -361,6 +345,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/Rbasel.png">Rbasel.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -386,10 +374,6 @@ Reproducible Data Objects (RDO) in R
 <a href="PNG/RDO.png">RDO.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for rlistings" src="thumbs/rlistings.png" height="139"><br />rlistings
@@ -401,6 +385,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/rlistings.png">rlistings.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -426,10 +414,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/sasr.png">sasr.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for scda" src="thumbs/scda.png" height="139"><br />scda
@@ -441,6 +425,10 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/scda.png">scda.png</a>
 </td>
+
+</tr>
+
+<tr>
 
 <td>
 
@@ -467,10 +455,6 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/simIDM.png">simIDM.png</a>
 </td>
 
-</tr>
-
-<tr>
-
 <td>
 
 <img alt="Logo for staged.dependencies" src="thumbs/staged.dependencies.png" height="139"><br /><a href="https://github.com/openpharma/staged.dependencies">openpharma/staged.dependencies</a>
@@ -483,17 +467,9 @@ R package to implement development stages for package development
 <a href="PNG/staged.dependencies.png">staged.dependencies.png</a>
 </td>
 
-<td>
+</tr>
 
-<img alt="Logo for StatisticalEngineering_test" src="thumbs/StatisticalEngineering_test.png" height="139"><br />StatisticalEngineering_test
-<br />
-<p style="color:grey">
-
-This project is not tracked by openpharma.github.io
-</p>
-
-<a href="PNG/StatisticalEngineering_test.png">StatisticalEngineering_test.png</a>
-</td>
+<tr>
 
 <td>
 
@@ -506,10 +482,6 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/StatisticalEngineering.png">StatisticalEngineering.png</a>
 </td>
-
-</tr>
-
-<tr>
 
 <td>
 
@@ -535,6 +507,10 @@ This project is not tracked by openpharma.github.io
 <a href="PNG/teal.png">teal.png</a>
 </td>
 
+</tr>
+
+<tr>
+
 <td>
 
 <img alt="Logo for tern" src="thumbs/tern.png" height="139"><br />tern
@@ -546,10 +522,6 @@ This project is not tracked by openpharma.github.io
 
 <a href="PNG/tern.png">tern.png</a>
 </td>
-
-</tr>
-
-<tr>
 
 <td>
 
@@ -573,18 +545,6 @@ This project is not tracked by openpharma.github.io
 </p>
 
 <a href="PNG/TLG Catalog.png">TLG Catalog.png</a>
-</td>
-
-<td>
-
-<img alt="Logo for TLG" src="thumbs/TLG.png" height="139"><br />TLG
-<br />
-<p style="color:grey">
-
-This project is not tracked by openpharma.github.io
-</p>
-
-<a href="PNG/TLG.png">TLG.png</a>
 </td>
 
 </tr>
